@@ -15,3 +15,8 @@ body {
 .test-active {
     background-color: blue;
 }
+
+.display {
+    width: 300px;
+    height: 80px;
+}
