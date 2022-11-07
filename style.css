@@ -1,0 +1,17 @@
+body {
+
+}
+
+.main-container {
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 300px;
+    height: 300px;
+}
+
+.test-active {
+    background-color: blue;
+}
