@@ -7,7 +7,7 @@ const sumButton = document.getElementById('sum-all');
 
 let currentNumber = '';
 let previousNumber = '';
-let operator = undefined;
+let operator = '';
 
 // operators
 
@@ -34,7 +34,6 @@ function operate() {
             break;        
     }
     currentNumber = finalResult;
-    operator = undefined;
     previousNumber = ''
     displayNum()
 }
@@ -58,14 +57,18 @@ operatorButtons.forEach(button => {
     button.addEventListener('click', () => {
         if (currentNumber === '') return;
         if (previousNumber !== '') {
-            operator = button.innerHTML;
-            
+            operate()
         }
         
+        operator = button.innerHTML;
         previousNumber = currentNumber;
         currentNumber = '';
         displayNum()
     })
 })
 
-sumButton.addEventListener('click', operate)
+sumButton.addEventListener('click', () => {
+    if (currentNumber === '' || previousNumber === '') return
+    operate()
+    operator = ''
+})
